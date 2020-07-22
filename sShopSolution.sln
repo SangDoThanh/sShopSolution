@@ -3,7 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sShopSolution.WebApp", "sShopSolution.WebApp\sShopSolution.WebApp.csproj", "{C8184207-65A5-4863-A12C-1ED22FCF6EEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sShopSolution.WebApp", "sShopSolution.WebApp\sShopSolution.WebApp.csproj", "{C8184207-65A5-4863-A12C-1ED22FCF6EEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E1BC38EB-762A-4021-A2C3-6A540A311CC9}"
+	ProjectSection(SolutionItems) = preProject
+		README.MD = README.MD
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sShopSolution.Data", "sShopSolution.Data\sShopSolution.Data.csproj", "{AAB64821-F3D2-4D81-82F9-3B1C76AAD4AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sShopSoloution.Application", "sShopSoloution.Application\sShopSoloution.Application.csproj", "{00E2B31F-6A23-4FF6-89EF-F86B33A41FB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +24,14 @@ Global
 		{C8184207-65A5-4863-A12C-1ED22FCF6EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8184207-65A5-4863-A12C-1ED22FCF6EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8184207-65A5-4863-A12C-1ED22FCF6EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB64821-F3D2-4D81-82F9-3B1C76AAD4AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB64821-F3D2-4D81-82F9-3B1C76AAD4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB64821-F3D2-4D81-82F9-3B1C76AAD4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB64821-F3D2-4D81-82F9-3B1C76AAD4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00E2B31F-6A23-4FF6-89EF-F86B33A41FB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E2B31F-6A23-4FF6-89EF-F86B33A41FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E2B31F-6A23-4FF6-89EF-F86B33A41FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E2B31F-6A23-4FF6-89EF-F86B33A41FB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
