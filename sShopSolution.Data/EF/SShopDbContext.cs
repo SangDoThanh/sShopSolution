@@ -1,13 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using sShopSolution.Data.Configurations;
 using sShopSolution.Data.Entities;
+using sShopSolution.Data.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace sShopSolution.Data.EF
 {
-    public class SShopDbContext : DbContext //IdentityDbContext<AppUser, AppRole, Guid>
+    public class SShopDbContext : IdentityDbContext<AppUser, AppRole, Guid> //DbContext
     {
         public SShopDbContext(DbContextOptions options) : base(options)
         {
@@ -36,16 +39,17 @@ namespace sShopSolution.Data.EF
             modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
             modelBuilder.ApplyConfiguration(new ProductImageConfiguration());
 
-            //modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
-            //modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.UserId, x.RoleId });
-            //modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
+            modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
+            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.UserId, x.RoleId });
+            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
 
-            //modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
-            //modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
+            modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
+            modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
 
             //Data seeding
-            //modelBuilder.Seed();
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Seed();
+            //Configure using Fluent API
+            // base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Product> Products { get; set; }
